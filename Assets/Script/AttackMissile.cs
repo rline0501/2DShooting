@@ -21,7 +21,7 @@ public class AttackMissile : MonoBehaviour
     {
         timeCount += 1;
 
-        if (Input.GetButton("Jump"))
+        if (Input.GetButton("Attack"))
         {
             if(timeCount % shootCooltime == 0)
             {
