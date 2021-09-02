@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyMoveRightLeft : MonoBehaviour
+public class EnemyMoveRightLeft : EnemyBase
 {
     //ˆÚ“®‘¬“x
     public float moveSpeed;

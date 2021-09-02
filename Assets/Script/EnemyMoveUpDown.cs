@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyMoveUpDown : MonoBehaviour
+public class EnemyMoveUpDown : EnemyBase
 {
     //ˆÚ“®‘¬“x
     public float moveSpeed;
