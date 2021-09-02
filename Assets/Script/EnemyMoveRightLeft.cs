@@ -14,8 +14,9 @@ public class EnemyMoveRightLeft : EnemyBase
         pos = transform.position;
     }
 
-    void Update()
+   protected override void Update()
     {
+        base.Update();
 
         transform.Translate(-moveSpeed * Time.deltaTime, 0, 0);
     }

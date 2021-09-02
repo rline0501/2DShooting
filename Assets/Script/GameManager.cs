@@ -39,7 +39,7 @@ public class GameManager : MonoBehaviour
     /// </summary>
     private void SetWaveData()
     {
-        currentWaveData = stageWaveDataList.Find(x => x.waveNo == currentWaveCount);
+        currentWaveData = stageWaveDataList.Find(x => x.waveNumber == currentWaveCount);
 
         //foreach (WaveData waveData in stageWaveDataList) {
         //if (waveData.waveNo == currentWaveCount) {
@@ -59,10 +59,10 @@ public class GameManager : MonoBehaviour
     /// </summary>
     private IEnumerator GenerateEnemies()
     {
-        for(int i = 0; i < currentWaveData.enemyBases.Length; i++)
+        for(int i = 0; i < currentWaveData.enemys.Length; i++)
         {
             //エネミーの生成
-            EnemyBase enemyBase = Instantiate(currentWaveData.enemyBases[i], transform.position, Quaternion.identity);
+            EnemyBase enemyBase = Instantiate(currentWaveData.enemys[i], transform.position, Quaternion.identity);
 
             //エネミーの設定
             enemyBase.SetUpEnemy(this);
@@ -87,7 +87,7 @@ public class GameManager : MonoBehaviour
     private IEnumerator observeWave()
     {
         //Waveないに出現するすべてのエネミーが破壊されたか監視
-        while(enemyDestroyCount < currentWaveData.enemyBases.Length)
+        while(enemyDestroyCount < currentWaveData.enemys.Length)
         {
             yield return null;
         }

@@ -14,8 +14,9 @@ public class EnemyMoveUpDown : EnemyBase
         pos = transform.position;
     }
 
-    void Update()
+    protected override void Update()
     {
+        base.Update();
 
         transform.Translate(0, -moveSpeed * Time.deltaTime, 0);
     }
