@@ -136,6 +136,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dcb243e35e9880c46bb7122d7585606d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  scorePoint: 100
+  enemyHp: 1
   moveSpeed: 3
 --- !u!1 &8444951836256427917
 GameObject:

@@ -10,6 +10,8 @@ public class GameManager : MonoBehaviour
 
     public int currentWaveCount;
 
+    public ScoreManager scoreManager;
+
     [SerializeField]
     private int enemyDestroyCount;
 
