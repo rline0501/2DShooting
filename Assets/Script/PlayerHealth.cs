@@ -1,7 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 
 public class PlayerHealth : MonoBehaviour
 {
@@ -9,10 +8,14 @@ public class PlayerHealth : MonoBehaviour
 
     private int destroyCount = 0;
 
-    private void OnTriggerEnter(Collid other)
+    private void OnTriggerEnter(Collider other)
     {
-        if(other.gameObject CompareTag("EnemyMissile"))
+        Debug.Log("–½’†");
+
+        if(other.gameObject.CompareTag("EnemyMissile"))
         {
+            Debug.Log(other.gameObject.name);
+
             this.gameObject.SetActive(false);
 
             destroyCount += 1;
