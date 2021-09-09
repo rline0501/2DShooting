@@ -11,6 +11,8 @@ public class EnemyBase : MonoBehaviour
     //敵のHP
     public int enemyHp;
 
+    public GameObject[] itemPrefab;
+
  
     public virtual void SetUpEnemy(GameManager gameManager)
     {
@@ -41,7 +43,9 @@ public class EnemyBase : MonoBehaviour
             gameManager.scoreManager.DisplayScore();
 
             //撃破時にアイテムを生成する（メソッド）
+            GameObject dropItem = itemPrefab[Random.Range(0, itemPrefab.Length)];
 
+            Instantiate(dropItem, transform.position, Quaternion.identity);
         }
 
         //得点の有無に関わらずデストロイする

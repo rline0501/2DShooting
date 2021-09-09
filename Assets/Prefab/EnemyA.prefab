@@ -138,6 +138,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   scorePoint: 100
   enemyHp: 1
+  itemPrefab:
+  - {fileID: 5248562953110335782, guid: 1b90ad60ffb1af54ebcaf645b56d1c78, type: 3}
   moveSpeed: 3
 --- !u!1 &7172348621659010065
 GameObject:
