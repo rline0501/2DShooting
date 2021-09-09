@@ -140,7 +140,7 @@ MonoBehaviour:
   enemyHp: 1
   itemPrefab:
   - {fileID: 5248562953110335782, guid: 1b90ad60ffb1af54ebcaf645b56d1c78, type: 3}
-  moveSpeed: 3
+  moveSpeed: 2
 --- !u!1 &8444951836256427917
 GameObject:
   m_ObjectHideFlags: 0

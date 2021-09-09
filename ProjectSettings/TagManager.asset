@@ -10,13 +10,13 @@ TagManager:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Item
   - Water
   - UI
-  - 
-  - 
-  - 
-  - 
+  - Bullet
+  - Invincible
+  - Player
+  - Enemy
   - 
   - 
   - 

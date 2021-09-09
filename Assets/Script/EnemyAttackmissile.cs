@@ -12,14 +12,14 @@ public class EnemyAttackmissile : MonoBehaviour
 
     void Start()
     {
-       
+
     }
 
     void Update()
     {
         timeCount += 1;   
 
-        if(timeCount % 100 == 0)
+        if(timeCount % 600 == 0)
         {
             //敵ミサイルの生成
             GameObject enemyMissile = Instantiate(enemyMissilePrefab, transform.position, Quaternion.identity);
@@ -27,10 +27,10 @@ public class EnemyAttackmissile : MonoBehaviour
             Rigidbody2D enemyMissileRb = enemyMissile.GetComponent<Rigidbody2D>();
 
             //ミサイルを飛ばす方向を決める
-            enemyMissileRb.AddForce(transform.up * speed);
+            enemyMissileRb.AddForce(-transform.up * speed);
 
             //３秒後にミサイルを破壊する
-            Destroy(enemyMissile, 3.0f);
+            Destroy(enemyMissile, 5.0f);
 
         }
     }

@@ -140,7 +140,7 @@ MonoBehaviour:
   enemyHp: 1
   itemPrefab:
   - {fileID: 5248562953110335782, guid: 1b90ad60ffb1af54ebcaf645b56d1c78, type: 3}
-  moveSpeed: 3
+  moveSpeed: 1
 --- !u!1 &7172348621659010065
 GameObject:
   m_ObjectHideFlags: 0
@@ -185,7 +185,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyMissilePrefab: {fileID: 7221492508975566371, guid: a3bcb0ff6a92a854f9bbac52e077a8ff, type: 3}
-  speed: 5
+  speed: 100
 --- !u!1 &7172348622478814109
 GameObject:
   m_ObjectHideFlags: 0
