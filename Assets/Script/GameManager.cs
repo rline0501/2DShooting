@@ -17,6 +17,8 @@ public class GameManager : MonoBehaviour
 
     void Start()
     {
+        ScoreData.instance.totalScore = 0;
+
         SetStageWaveData();
 
         SetWaveData();

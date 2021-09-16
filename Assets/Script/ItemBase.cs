@@ -34,6 +34,9 @@ public class ItemBase : MonoBehaviour
 
     protected virtual void GetItem()
     {
+        //各クラスでそれぞれの処理をここに書く
+        //オブジェクトを消す
         this.gameObject.SetActive(false);
+
     }
 }
