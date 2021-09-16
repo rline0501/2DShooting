@@ -291,7 +291,7 @@ GameObject:
   - component: {fileID: 168437648}
   - component: {fileID: 168437649}
   - component: {fileID: 168437650}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Komachi_Player
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -476,6 +476,7 @@ MonoBehaviour:
   - {fileID: 1533130576}
   - {fileID: 790881181}
   - {fileID: 365138578}
+  sr: {fileID: 0}
 --- !u!50 &254453590
 Rigidbody2D:
   serializedVersion: 4
