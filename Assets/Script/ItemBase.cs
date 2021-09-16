@@ -6,23 +6,23 @@ public class ItemBase : MonoBehaviour
 {
     public float moveSpeed;
 
-    private Vector2 pos;
+    protected Vector2 pos;
 
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    protected void OnTriggerEnter2D(Collider2D other)
     {
-        if (collision.gameObject.CompareTag("Player"))
+        if (other.gameObject.CompareTag("Player"))
         {
-            this.gameObject.SetActive(false);
+            GetItem();  
         }
     }
 
-    private void Update()
+    protected void Update()
     {
         transform.Translate(0, -moveSpeed * Time.deltaTime, 0);
     }
 
-    private void FixedUpdate()
+    protected void FixedUpdate()
     {
         //スクリプトがアタッチされているゲームオブジェクトがゲーム画面に映らない位置まで移動したら
         if (transform.position.x <= -10.0f || transform.position.y <= -6.0f)
@@ -30,5 +30,10 @@ public class ItemBase : MonoBehaviour
             //デストロイする
             Destroy(gameObject);
         }
+    }
+
+    protected virtual void GetItem()
+    {
+        this.gameObject.SetActive(false);
     }
 }
