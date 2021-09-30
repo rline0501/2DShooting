@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using DG.Tweening;
+using UnityEngine.SceneManagement;
 
 public class ResultPopUp : MonoBehaviour
 {
@@ -44,10 +45,13 @@ public class ResultPopUp : MonoBehaviour
         sequence.AppendInterval(2.0f).OnComplete(() => { btnTitle.interactable = true; });
 
         //ボタンを押すとタイトル画面に移行する
+        OnClickTitle();
     }
 
-    private void OnClickTitle()
+    public void OnClickTitle()
     {
+        SceneManager.LoadScene("TitleScene");
+
         Debug.Log("ボタンを押しました");
     }
 

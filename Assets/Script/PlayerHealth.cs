@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using DG.Tweening;
+using UnityEngine.SceneManagement;
 
 public class PlayerHealth : MonoBehaviour
 {
@@ -28,7 +29,18 @@ public class PlayerHealth : MonoBehaviour
             //コルーチンのメソッドを実行する。コルーチンの中に書かなきゃいけないので調べよう
             //gameObject.layer = LayerMask.NameToLayer("Invincible");
 
+            //無敵演出開始
             StartCoroutine(InvTime());
+
+            //被撃破回数が３回を超えた時（残機回復はdestroyCount -= 1でのちに処理する）
+            if(destroyCount > 3)
+            {
+                //GameOverのプレファブを画面に呼び出す
+
+
+                //destroyCountをリセット
+                destroyCount = 0;
+            }
 
            // this.gameObject.SetActive(false);
         }
