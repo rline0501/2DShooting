@@ -9,4 +9,6 @@ public class WaveData
     public int waveNumber;
 
     public int[] enemyNumbers;
+
+    public int[] enemyPos;
 }

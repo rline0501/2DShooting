@@ -10,6 +10,8 @@ public class DataBaseManager : MonoBehaviour
 
     public EnemyDataSO enemyDataSO;
 
+    public EnemyPositionDataSO enemyPositionDataSO;
+
     void Awake()
     {
         if(instance == null)

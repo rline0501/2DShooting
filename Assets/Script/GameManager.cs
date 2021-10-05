@@ -79,8 +79,28 @@ public class GameManager : MonoBehaviour
             //エネミーの設定
             enemyBase.SetUpEnemy(this, enemyData);
 
-            //位置の変更
+            //エネミー出現位置のelement内番号を持たせる変数
+            //enemyPosDataSOのelementの番号と照合させるためのもの
+            int enemyPosIndex = 0;
 
+            //記入したenemyPosが-1だった場合
+            if(currentWaveData.enemyPos[i] == -1)
+            {
+                //element0～2の中の出現位置(1～3)をランダムに取得してrandomValueに代入
+                int randomValue = Random.Range(0, enemyData.positions.Length);
+
+                //出現位置をrandomValueに代入してある出現位置に上書きする
+                enemyPosIndex = enemyData.positions[randomValue];
+            }
+            else
+            {
+                //普通に本来の出現位置がそのまま代入される
+                enemyPosIndex = currentWaveData.enemyPos[i];
+            }
+            //位置の変更
+            EnemyPosition enemyPosition = DataBaseManager.instance.enemyPositionDataSO.enemyPositionsList.Find(x => x.positionNumber == enemyPosIndex);
+
+            enemyBase.transform.position = enemyPosition.transform.position;
 
             //Listへ追加
 

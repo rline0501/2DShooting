@@ -14,27 +14,32 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyDatasList:
   - number: 0
-    hp: 0
+    hp: 1
     name: 
-    point: 0
+    point: 100
     enemyPrefab: {fileID: 7172348621597774143, guid: 479b11339f9b77f4a9726c3cb19c4616, type: 3}
+    positions: 010000000200000003000000
   - number: 1
-    hp: 0
+    hp: 1
     name: 
-    point: 0
+    point: 100
     enemyPrefab: {fileID: 8444951835756320532, guid: 66d4c1e368962224ea409790f98a50d8, type: 3}
+    positions: 00000000
   - number: 2
-    hp: 0
+    hp: 1
     name: 
-    point: 0
-    enemyPrefab: {fileID: 0}
+    point: 100
+    enemyPrefab: {fileID: 2716502995992603911, guid: f3e6832a45169ea45a1af29cfcf27296, type: 3}
+    positions: 04000000
   - number: 3
     hp: 0
     name: 
     point: 0
     enemyPrefab: {fileID: 0}
+    positions: 
   - number: 4
     hp: 0
     name: 
     point: 0
     enemyPrefab: {fileID: 0}
+    positions: 

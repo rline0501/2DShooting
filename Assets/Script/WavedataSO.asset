@@ -14,8 +14,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   waveDatasList:
   - waveNumber: 0
-    enemyNumbers: 0000000001000000
+    enemyNumbers: 0100000000000000000000000000000002000000
+    enemyPos: 00000000ffffffffffffffffffffffff04000000
   - waveNumber: 1
     enemyNumbers: 
+    enemyPos: 
   - waveNumber: 2
     enemyNumbers: 
+    enemyPos: 
