@@ -12,17 +12,26 @@ public class PlayerHealth : MonoBehaviour
 
     public SpriteRenderer sr;
 
-
+    [SerializeField]
+    public GameManager gameManager;
+   
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        Debug.Log("命中");
+        //LayerがInvincible（無敵中）の場合は処理を行わない
+        if (gameObject.layer == LayerMask.NameToLayer("Invincible"))
+        {
+            return;
+        }
+
+         Debug.Log("命中");
 
         if(other.gameObject.CompareTag("EnemyMissile"))
         {
             Debug.Log(other.gameObject.name);
 
-            destroyCount += 1;
+            //destroyCountを＋１する
+            destroyCount ++;
 
             UpdatePlayerIcons();
 
@@ -32,17 +41,20 @@ public class PlayerHealth : MonoBehaviour
             //無敵演出開始
             StartCoroutine(InvTime());
 
-            //被撃破回数が３回を超えた時（残機回復はdestroyCount -= 1でのちに処理する）
+            Debug.Log(destroyCount);
+
+            //被撃破回数が３回を超えた時（残機回復はdestroyCount --でのちに処理する）
             if(destroyCount > 3)
             {
-                //GameOverのプレファブを画面に呼び出す
-
+                //ResultPopUpのプレファブを画面に呼び出す処理をGameManagerに実行させる
+                gameManager.GenerateResultPopUp();
 
                 //destroyCountをリセット
                 destroyCount = 0;
-            }
 
-           // this.gameObject.SetActive(false);
+                //Playerを非アクティブ化する
+                this.gameObject.SetActive(false);
+            }
         }
     }
 

@@ -8,5 +8,5 @@ public class WaveData
 {
     public int waveNumber;
 
-    public EnemyBase[] enemys;
+    public int[] enemyNumbers;
 }

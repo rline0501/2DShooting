@@ -8,6 +8,8 @@ public class DataBaseManager : MonoBehaviour
 
     public WaveDataSO waveDataSO;
 
+    public EnemyDataSO enemyDataSO;
+
     void Awake()
     {
         if(instance == null)

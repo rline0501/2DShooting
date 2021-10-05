@@ -13,5 +13,5 @@ public class EnemyData
 
     public int point;
 
-    public EnemyData[] enemyDatas;
+    public EnemyBase enemyPrefab;
 }

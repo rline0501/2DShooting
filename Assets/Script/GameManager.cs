@@ -15,6 +15,9 @@ public class GameManager : MonoBehaviour
     [SerializeField]
     private int enemyDestroyCount;
 
+    [SerializeField]
+    private GameObject resultPrefab;
+
     void Start()
     {
         ScoreData.instance.totalScore = 0;
@@ -63,13 +66,18 @@ public class GameManager : MonoBehaviour
     /// </summary>
     private IEnumerator GenerateEnemies()
     {
-        for(int i = 0; i < currentWaveData.enemys.Length; i++)
+        for(int i = 0; i < currentWaveData.enemyNumbers.Length; i++)
         {
+            //DataBaseManagerクラスがシングルトンクラスなので、DataBaseManager.instanceと書くとpublicの情報にアクセスできる
+            //publicの情報にEnemyDataSOの情報が変数になっているので、そこにアクセスしてその中のListの情報にアクセスする
+            //Listの中身を指定した敵の番号で検索をしたいのでFindメソッドを使ってEnemyDataの敵の番号と照合する
+            EnemyData enemyData = DataBaseManager.instance.enemyDataSO.enemyDatasList.Find(x => x.number == currentWaveData.enemyNumbers[i]);
+
             //エネミーの生成
-            EnemyBase enemyBase = Instantiate(currentWaveData.enemys[i], transform.position, Quaternion.identity);
+            EnemyBase enemyBase = Instantiate(enemyData.enemyPrefab, transform.position, Quaternion.identity);
 
             //エネミーの設定
-            enemyBase.SetUpEnemy(this);
+            enemyBase.SetUpEnemy(this, enemyData);
 
             //位置の変更
 
@@ -91,7 +99,7 @@ public class GameManager : MonoBehaviour
     private IEnumerator observeWave()
     {
         //Waveないに出現するすべてのエネミーが破壊されたか監視
-        while(enemyDestroyCount < currentWaveData.enemys.Length)
+        while(enemyDestroyCount < currentWaveData.enemyNumbers.Length)
         {
             yield return null;
         }
@@ -141,4 +149,10 @@ public class GameManager : MonoBehaviour
         enemyDestroyCount++;
     }
    
+    public void GenerateResultPopUp()
+    {
+        //result
+        Instantiate(resultPrefab);
+    }
+
 }

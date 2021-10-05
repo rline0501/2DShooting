@@ -12,11 +12,16 @@ public class EnemyBase : MonoBehaviour
     public int enemyHp;
 
     public GameObject[] itemPrefab;
-
  
-    public virtual void SetUpEnemy(GameManager gameManager)
+    public virtual void SetUpEnemy(GameManager gameManager, EnemyData enemyData)
     {
         this.gameManager = gameManager;
+
+        //
+
+        //SO‚Ìƒf[ƒ^‚ğ”½‰f‚µ‚ÄÄİ’è‚·‚é
+        this.enemyHp = enemyData.hp;
+        this.scorePoint = enemyData.point;
     }
 
     protected virtual void Update()

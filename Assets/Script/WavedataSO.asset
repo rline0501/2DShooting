@@ -14,10 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   waveDatasList:
   - waveNumber: 0
-    enemys:
-    - {fileID: 7172348621597774143, guid: 479b11339f9b77f4a9726c3cb19c4616, type: 3}
-    - {fileID: 8444951835756320532, guid: 66d4c1e368962224ea409790f98a50d8, type: 3}
+    enemyNumbers: 0000000001000000
   - waveNumber: 1
-    enemys: []
+    enemyNumbers: 
   - waveNumber: 2
-    enemys: []
+    enemyNumbers: 

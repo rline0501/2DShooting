@@ -45,11 +45,12 @@ public class ResultPopUp : MonoBehaviour
         sequence.AppendInterval(2.0f).OnComplete(() => { btnTitle.interactable = true; });
 
         //ボタンを押すとタイトル画面に移行する
-        OnClickTitle();
+        //OnClickTitle();
     }
 
     public void OnClickTitle()
     {
+        //ボタンを押すとTitleScnenに移動する
         SceneManager.LoadScene("TitleScene");
 
         Debug.Log("ボタンを押しました");
